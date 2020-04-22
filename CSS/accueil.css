@@ -6,6 +6,9 @@ a, p, li, button{
     font-size: 20px;
     text-decoration: none;
 }
+/* je n'aime pas trop l'utilisation des id dans le style
+    je conseillerai l'utilisation des classes plutôt
+*/
 
 #btn{
     border-radius: 16px;
@@ -20,6 +23,11 @@ body{
     background-image: url("../Asset/Background-3_ba2zrk.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    /**
+    ça s'applique pas à toute la hauteur de la page
+    tu peux le faire sans utiliser box-shadow
+    regarde linear-gradient dans l'attribut background 
+    **/
     box-shadow: inset 5000px 0 0 0 rgba(153, 102, 102, 0.5);
 } 
 
