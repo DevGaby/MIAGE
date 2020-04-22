@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COURS</title>
+    <link rel="stylesheet" href="./../CSS/cours.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="navbar navbar-expand-lg navbar-light">
+            <a id="accueil" class="text-uppercase text-black text-decoration-none" href="accueil.html"> <b> accueil </b> </a>
+            <div class="collapse navbar-collapse w-75">
+                <ul class=" header navbar-nav ml-auto ">
+                    <li class="nav-item pl-2"> <a class="nav-link text-black" href="/"> <b class="text-uppercase"> programme </b> </a> </li>
+                    <li class="nav-item active pl-2"> <a class="nav-link text-danger" href="cours.html"> <b class="text-uppercase"> cours </b> </a> </li>
+                    <li class="nav-item pl-2"> <a class="nav-link text-black" href="/"> <b class="text-uppercase"> profs </b> </a> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-body bg-danger">
+            <p id="administer" class="text-center">Administrer les cours</p>
+            <table class="table table-dark">
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col">#</th>
+                    <th scope="col">Intitulé</th>
+                    <th scope="col">Période</th>
+                    <th scope="col">Nombre d'heures</th>
+                    <th scope="col">Prof</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Algorithmes</td>
+                    <td>01/01 - 01/03/2020</td>
+                    <td>35h</td>
+                    <td>Nom Prénom</td>
+                    <td>Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</td>
+                    <td><button type="button" class="btn btn-danger text-uppercase text-center"> supprimer </button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Conception</td>
+                    <td>01/02 - 29/04/2020</td>
+                    <td>20h</td>
+                    <td>Nom Prénom</td>
+                    <td>Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</td>
+                    <td><button type="button" class="btn btn-danger text-uppercase text-center"> supprimer </button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Base de données</td>
+                    <td>01/02 - 15/03/2020</td>
+                    <td>40h</td>
+                    <td>Nom Prénom</td>
+                    <td>Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</td>
+                    <td><button type="button" class="btn btn-danger text-uppercase text-center"> supprimer </button></td>
+                  </tr>
+                  <form>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>
+                            <input type="text" class="form-control" id="title" placeholder="Intitulé">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="period" placeholder="Période">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="nbHour" placeholder="Nombre d'heure">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="teacher" placeholder="Prof">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" id="description" placeholder="Description">
+                        </td>
+                        <td><button type="submit" class="btn btn-success text-uppercase text-center"> ajouter </button></td>
+                      </tr>
+                  </form>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    
+</body>
+</html>
