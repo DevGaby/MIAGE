@@ -40,6 +40,7 @@ footer {
 }
 
 .btn{
+     /* haut | droit | bas | gauche */
     padding: 15px 40px 15px 40px;
     border-radius: 30px;
     font-size: 15px;
