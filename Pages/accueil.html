@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> ACCUEIL </title>
+    <link rel="stylesheet" href="./../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="./../CSS/accueil.css">
-    <!-- t'as pas utilisé le fichier bootstrap dans ton 
-        dossier css, et aussi t'importe le fichier JS
-         y a t'il une raison 
-    -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -24,25 +19,31 @@
                 </ul>
             </div>
         </div>
-        <div id="title" class="row d-flex flex-column ">
-            <div class="col">
-                <p id="name" class="text-white text-uppercase text-center pb-2"> 
-                    <b>méthodes informatiques <br/> appliquées  à la gestion <br/> des entreprises</p> </b>
+        <div class="row d-flex flex-column ">
+            <div class="col text-white text-uppercase text-center"> 
+                    <h2>méthodes informatiques<br/>
+                        appliquées  à la gestion <br/>
+                        des entreprises
+                    </h2> 
+                    
                 <p class="text-white text-center">
-                    Bienvenue dans la gestion du programme MIAGE. Ici vous pouvez Administrer le <br/>programme de l'année, ajuter des cours, ajouter des profs
+                    Bienvenue dans la gestion du programme MIAGE. Ici vous pouvez Administrer le <br/>programme de l'année, ajouter des cours, ajouter des profs
                 </p>
             </div>
         </div>
-        <div id="detail" class="row d-flex flex-column">
+        <div class="row d-flex flex-column pt-5">
             <div class="col text-center">
                 <button type="button" id="btn" class="btn btn-danger btn-lg text-uppercase text-center"><b> administrer</b></button>
             </div>
         </div>
     </div>
-    <footer class="blockquote-footer text-center">
-        <p class="text-white text-muted">
-          <a class="text-white text-decoration-none"> 2020@HEYGAB | </a><a class="text-white text-decoration-none" href="mailto:gabycalixte@gmail.com"><i> gabycalixte@gmail.com </i> </a>
-        </p>
-      </footer> 
+    <footer class="footer d-inline-flex justify-content-center">
+        <div class="">
+            <a class="text-white"> ©2020 - HEYGAB | </a>
+            <a class="text-white text-decoration-none" href="mailto:gabycalixte@gmail.com">
+                <i> gabycalixte@gmail.com </i> 
+            </a>
+        </div>
+    </footer> 
 </body>
 </html>
