@@ -16,6 +16,10 @@ a[href^="mailto:"] {
     color: black;
 }
 
+.card-body{
+    background-color: #EC5E2A;
+}
+
 .card{
     width: 300px;
     padding: 0;
