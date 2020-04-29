@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programme</title>
-    <link rel="stylesheet" href="./../CSS/programme.css">
-    <!-- même remarque (dans accueil) pour le fichier bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="./../CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./../CSS/programme.css"></head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="navbar navbar-expand-lg navbar-light">
-            <a id="accueil" class="text-uppercase text-black text-decoration-none" href="accueil.html"> <b> accueil </b> </a>
+            <a class="text-uppercase text-black text-decoration-none" href="accueil.html"> <b> accueil </b> </a>
             <div class="collapse navbar-collapse w-75">
                 <ul class=" header navbar-nav ml-auto ">
                     <li class="nav-item active pl-2"> <a class="nav-link text-danger" href="programme.html"> <b class="text-uppercase"> programme </b> </a> </li>
@@ -21,77 +18,80 @@
                 </ul>
             </div>
         </div>
-        <!-- même remarque pour bg-danger (cours.html) -->
-        <div class="card-body bg-danger">
-            <div class="text-center p-2">
-                <h2 id="lesson" class="">Mes cours</h2>
+        <div class="card-body d-flex flex-column">
+            <div class=""> <h2 class="card-title text-center">Mes cours</h2> </div>
+                
+            <div class="container p-2">
+                <div class="row row-cols-3">
+                <div class="col d-flex align-items-center">
+                    <div class="card m-3">
+                        <img src="../Asset/lesson.png" class="card-img card-img-top" alt="teacher icon">
+                        <div class="p-0">
+                            <h3 class="card-title text-center text-danger">Algorithmes</h3>
+                            <h6 class="card-title px-3"><b> Du 01/01 au 01/03/2020 </b></h6>
+                            <p class="card-text px-3">Description : Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                            <div class="card-secondary bg-light px-3" style="height: 50px; line-height: 50px;"> Prof : Nom Prénom</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <div class="card m-3">
+                        <img src="../Asset/lesson.png" class="card-img card-img-top justify-content-center" alt="teacher icon">
+                        <div class="p-0">
+                            <h3 class="card-title text-center text-danger ">Conception</h3>
+                            <h6 class="card-title px-3"><b> Du 01/02 au 29/04/2020 </b></h6>
+                            <p class="card-text px-3">Description : Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                            <div class="card-secondary bg-light px-3" style="height: 50px; line-height: 50px;"> Prof : Nom Prénom</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <div class="card m-3">
+                        <img src="../Asset/lesson.png" class="card-img card-img-top justify-content-center" alt="teacher icon">
+                        <div class="p-0">
+                            <h3 class="card-title text-center text-danger">Base de données</h3>
+                            <h6 class="card-title px-3"><b> Du 01/02 au 15/03/2020 </b></h6>
+                            <p class="card-text px-3">Description : Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                            <div class="card-secondary bg-light px-3" style="height: 50px; line-height: 50px;"> Prof : Nom Prénom</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <div class="card m-3">
+                        <img src="../Asset/lesson.png" class="card-img card-img-top justify-content-center" alt="teacher icon">
+                        <div class="p-0">
+                            <h3 class="card-title text-center text-danger"></h3>
+                            <h6 class="card-title px-3"><b>  </b></h6>
+                            <p class="card-text px-3">Description : </p>
+                            <div class="card-secondary bg-light px-3" style="height: 50px; line-height: 50px;"> Prof : Nom Prénom</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex align-items-center">
+                    <div class="card m-3">
+                        <img src="../Asset/lesson.png" class="card-img card-img-top justify-content-center" alt="teacher icon">
+                        <div class="p-0">
+                            <h3 class="card-title text-center text-danger"></h3>
+                            <h6 class="card-title px-3"><b>  </b></h6>
+                            <p class="card-text px-3">Description : </p>
+                            <div class="card-secondary bg-light px-3" style="height: 50px; line-height: 50px;"> Prof : Nom Prénom</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
-        
-            <div class="row row-cols-3 pl-5 pr-5">
-                <div class="col pb-3">
-                        <div class="card">
-                            <!-- il faut diminuer la taille de l'image, pour diminuer la taille du car -->
-                            <img src="../Asset/lesson.png" class="card-img-top" alt="teacher icon">
-                            <div class="card-body p-0">
-                            <h3 class="card-title text-center text-danger p-3">Algorithmes</h3>
-                            <h5 class="card-title p-3"><b> Du 01/01 au 01/03/2020 </b></h5>
-                            <p class="card-text p-3">Description : Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            <div class="card-secondary bg-light p-3"> Prof: Nom Prénom</div>
-                            </div>
-                        </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="../Asset/lesson.png" class="card-img-top" alt="teacher icon">
-                        <div class="card-body p-0">
-                            <h3 class="card-title text-center text-danger p-3">Conception</h3>
-                            <h5 class="card-title p-3"><b> Du 01/02 au 29/04/2020 </b></h5>
-                            <p class="card-text p-3">Description : Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            <div class="card-header bg-light p-3">Prof: Nom Prénom </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="col">
-                    <div class="card">
-                        <img src="../Asset/lesson.png" class="card-img-top" alt="teacher icon">
-                        <div class="card-body p-0">
-                            <h3 class="card-title text-center text-danger p-3">Base de donnéés</h3>
-                            <h5 class="card-title p-3"><b> Du 01/02 au 15/03/2020 </b></h5>
-                            <p class="card-text p-3">Description : Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            <div class="card-header bg-light p-3">Prof: Nom Prénom</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="../Asset/lesson.png" class="card-img-top" alt="teacher icon">
-                        <div class="card-body p-0">
-                            <h3 class="card-title text-center text-danger p-3">...</h3>
-                            <h5 class="card-title p-3"><b> Du ... au ... </b></h5>
-                            <p class="card-text p-3">Description : Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            <div class="card-header bg-light p-3">Prof: Nom Prénom</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="../Asset/lesson.png" class="card-img-top" alt="teacher icon">
-                        <div class="card-body p-0">
-                            <h3 class="card-title text-center text-danger p-3">...</h3>
-                            <h5 class="card-title p-3"><b> Du ... au ... </b></h5>
-                            <p class="card-text p-3">Description : Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                            <div class="card-header bg-light p-3">Prof: Nom Prénom</div>
-                        </div>
-                    </div>
-                </div>   
-            </div>
+
+            
         </div>
     </div>
     </div>
-    <footer class="blockquote-footer text-center">
-        <p class="text-white text-muted">
-          <a class="text-white text-decoration-none"> 2020@HEYGAB | </a><a class="text-white text-decoration-none" href="mailto:gabycalixte@gmail.com"><i> gabycalixte@gmail.com </i> </a>
-        </p>
-    </footer>
+    <footer class="footer d-inline-flex justify-content-center">
+        <div class="">
+            <a class="text-black"> ©2020 - HEYGAB | </a>
+            <a class="text-black text-decoration-none" href="mailto:gabycalixte@gmail.com">
+                <i> gabycalixte@gmail.com </i> 
+            </a>
+        </div>
+    </footer> 
 </body>
 </html>

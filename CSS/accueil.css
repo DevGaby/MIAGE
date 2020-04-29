@@ -1,40 +1,59 @@
-#title{
-    padding: 100px 50px 50px;
+
+body {
+	display : table;
 }
 
-a, p, li, button{
+.navbar{
     font-size: 20px;
-    text-decoration: none;
-}
-/* je n'aime pas trop l'utilisation des id dans le style
-    je conseillerai l'utilisation des classes plutôt
-*/
-
-#btn{
-    border-radius: 16px;
 }
 
-#name{
-    font-size: 55px;
-}
-body{
+html, body{
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url("../Asset/Background-3_ba2zrk.jpg");
+    /* Permet d'ajouter une coleur + opacité + une image */
+    background: linear-gradient(rgba(155, 102, 102, 0.7), rgba(203, 188, 188, 0.7)), 
+                url("../Asset//Background-3_ba2zrk.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
-    /**
-    ça s'applique pas à toute la hauteur de la page
-    tu peux le faire sans utiliser box-shadow
-    regarde linear-gradient dans l'attribut background 
-    **/
-    box-shadow: inset 5000px 0 0 0 rgba(153, 102, 102, 0.5);
 } 
+
+p{
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2{
+    line-height: 65px; 
+    font-size: 65px;
+    padding: 200px 50px 50px;
+    font-weight: bold;
+}
+
+footer {
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    font-size: 20px;
+    padding: 15px;
+    background: #EC5E2A;
+}
+
+.btn{
+     /* haut | droit | bas | gauche */
+    padding: 15px 40px 15px 40px;
+    border-radius: 30px;
+    font-size: 15px;
+    background-color: rgb(236, 94, 42);
+    border: none;
+}
+
 
 .container-fluid{
     width: 100%;
     height: auto;
-    padding-bottom: 50px;;
+    padding-bottom: 50px;
 }
 
 
