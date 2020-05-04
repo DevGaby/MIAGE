@@ -24,6 +24,7 @@ var classes = [
     }
 ]
 
+//#region Iniatilize page
 function getClasses() {
      const myTBody = document.getElementById("classTab").getElementsByTagName("tbody")[0];
      classes.forEach(c => {  
@@ -43,8 +44,18 @@ function createRow(newClass){
                 +"<td><button type=\"button\" class=\"btn btn-danger text-uppercase text-center\"> Supprimer </button></td>"
             +"</tr>";
 }
+//#endregion 
 
+function deleteAll(displayOnly = true){
+    if(!displayOnly){
+        classes = [];
+    }
+    const class_tab = document.getElementById("classTab");
+    const row = class_tab.getElementsByTagName("tr");
+    const size = row.length;
 
-
-
-
+    // i > 1 pour qu'il s'arrete a la 2iem lig et ne supprime pas le form
+    for(let i=size-1; i>1; i--){
+        class_tab.deleteRow(i);
+    }
+}
