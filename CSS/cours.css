@@ -4,12 +4,12 @@
 }
 
 footer {
-    position: fixed;
+    position: relative;
     bottom:0;
     width: 100%;
     font-size: 20px;
     padding: 15px;
-    background: #EC5E2A;
+    background: #ffffff;
 }
 
 a[href^="mailto:"] {

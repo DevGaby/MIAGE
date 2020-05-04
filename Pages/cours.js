@@ -54,7 +54,6 @@ function deleteAll(displayOnly = true){
     const row = class_tab.getElementsByTagName("tr");
     const size = row.length;
 
-    // i > 1 pour qu'il s'arrete a la 2iem lig et ne supprime pas le form
     for(let i=size-1; i>1; i--){
         class_tab.deleteRow(i);
     }
@@ -64,12 +63,40 @@ function deleteClass(id){
  const idClass = classes.findIndex(c => c.id === id);
 
  if(idClass !== -1){
-    // .splce(a, b) => a= id de départ ; b= le nb d elmt a supprimer
     classes.splice(idClass, 1);
-    // destruction du tab + nvelle créa avec chngmt
     deleteAll();
     getClasses();
  }else{
     alert("Not found");
  }
+}
+
+function postClass(){
+    const title = document.getElementById("titleInput").value;
+    const period = document.getElementById("periodInput").value;
+    const nbHour = document.getElementById("nbHourInput").value;
+    const teacher = document.getElementById("teacherInput").value;
+    const description = document.getElementById("descriptionInput").value;
+
+    if(!title || !period || !teacher || !description || !Number.isInteger(+nbHour)){
+        alert("Vous n'avez pas remplis tous les champs");
+        return;
+    }
+    const addClass = {
+        "id": classes.length+1,
+        "label": title,
+        "period":period,
+        "nbHour": nbHour,
+        "teacher": teacher,
+        "detail": description
+    };
+    classes.push(addClass);
+    document.getElementById("titleInput").value = "";
+    document.getElementById("periodInput").value = "";
+    document.getElementById("nbHourInput").value = "";
+    document.getElementById("teacherInput").value = "";
+    document.getElementById("descriptionInput").value = "";
+    deleteAll();
+    getClasses();
+
 }
