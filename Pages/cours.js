@@ -41,7 +41,7 @@ function createRow(newClass){
                 +"<td>" + newClass.nbHour +"</td>"
                 +"<td>" + newClass.teacher +"</td>"
                 +"<td>" + newClass.detail +"</td>"
-                +"<td><button type=\"button\" class=\"btn btn-danger text-uppercase text-center\"> Supprimer </button></td>"
+                +"<td><button type=\"button\" class=\"btn btn-danger text-uppercase text-center\" onClick=\"deleteClass("+newClass.id+")\"> Supprimer </button></td>"
             +"</tr>";
 }
 //#endregion 
@@ -58,4 +58,18 @@ function deleteAll(displayOnly = true){
     for(let i=size-1; i>1; i--){
         class_tab.deleteRow(i);
     }
+}
+
+function deleteClass(id){
+ const idClass = classes.findIndex(c => c.id === id);
+
+ if(idClass !== -1){
+    // .splce(a, b) => a= id de départ ; b= le nb d elmt a supprimer
+    classes.splice(idClass, 1);
+    // destruction du tab + nvelle créa avec chngmt
+    deleteAll();
+    getClasses();
+ }else{
+    alert("Not found");
+ }
 }
