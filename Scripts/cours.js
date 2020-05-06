@@ -95,14 +95,13 @@ function createClass(){
         "detail": description
     };
     classes.push(addClass);
-
-    document.getElementById("titleInput").value = "";
-    document.getElementById("periodInput").value = "";
-    document.getElementById("nbHourInput").value = "";
-    document.getElementById("teacherInput").value = "";
-    document.getElementById("descriptionInput").value = "";
+    clearInput(["titleInput","periodInput","nbHourInput", "teacherInput","descriptionInput"]);
     deleteAll();
     displayClasses();
-
 }
 
+function clearInput(list){
+    for(let i= 0; i< list.length-1; i++){
+         document.getElementById(list[i]).value = "";
+    }
+}
