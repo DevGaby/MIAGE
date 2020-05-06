@@ -6,7 +6,7 @@
     <title>COURS</title>
     <link rel="stylesheet" href="./../CSS/bootstrap.min.css">
     <link rel="stylesheet" href="./../CSS/cours.css">
-    <script text="text/javascript" src="./cours.js"></script>
+    <script text="text/javascript" src="../Scripts/cours.js"></script>
 </head>
 <body>
     <div class="container-fluid p-0">
@@ -45,13 +45,13 @@
                             <input type="text" class="form-control" id="periodInput" placeholder="Période">
                         </td>
                         <td>
-                            <input type="number" class="form-control" id="nbHourInput" placeholder="Nombre d'heure">
+                            <input type="text" class="form-control" id="nbHourInput" placeholder="Nombre d'heure">
                         </td>
                         <td>
                             <input type="text" class="form-control" id="teacherInput" placeholder="Prof">
                         </td>
                         <td>
-                            <textarea class="form-control" id="descriptionInput" rows="5" cols="33"></textarea>
+                            <textarea class="form-control" id="descriptionInput" rows="3" cols="25"></textarea>
                         </td>
                         <td>
                           <button type="button" class="btn btn-success text-uppercase text-center" onClick="postClass()"> ajouter </button></td>
@@ -64,8 +64,7 @@
                         id="deleteAllBtn" onClick="deleteAll(false)"> tous suppimer 
                 </button>
               </div>
-              
-               <script text="text/javascript">getClasses();</script>
+            <script text="text/javascript">getClasses();</script>
         </div>
     </div>
     <footer class="footer d-inline-flex justify-content-center">
@@ -76,6 +75,5 @@
           </a>
       </div>
   </footer> 
- 
 </body>
 </html>

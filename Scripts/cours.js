@@ -3,14 +3,14 @@ var classes = [
         "id": 1,
         "label": "Algorithmes",
         "period":"01/01 - 01/03/2020",
-        "nbHour": 35+" h",
+        "nbHour": 35,
         "teacher": "Nom Prénom",
         "detail": "Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!"    },
     {
         "id":2,
         "label": "Conception",
         "period": "01/02 - 29/04/2020",
-        "nbHour": 20+" h",
+        "nbHour": 20,
         "teacher": "Nom Prénom",
         "detail": "Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!"
     },
@@ -18,7 +18,7 @@ var classes = [
         "id":3,
         "label": "Base de données",
         "period": "01/02 - 15/03/2020",
-        "nbHour": 40+" h",
+        "nbHour": 40,
         "teacher": "Nom Prénom",
         "detail": "Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!"
     }
@@ -38,7 +38,7 @@ function createRow(newClass){
                 +"<th>" + newClass.id +"</th>"
                 +"<td>" + newClass.label +"</td>"
                 +"<td>" + newClass.period +"</td>"
-                +"<td>" + newClass.nbHour +"</td>"
+                +"<td>" + newClass.nbHour +" h"+"</td>"
                 +"<td>" + newClass.teacher +"</td>"
                 +"<td>" + newClass.detail +"</td>"
                 +"<td><button type=\"button\" class=\"btn btn-danger text-uppercase text-center\" onClick=\"deleteClass("+newClass.id+")\"> Supprimer </button></td>"
@@ -78,19 +78,24 @@ function postClass(){
     const teacher = document.getElementById("teacherInput").value;
     const description = document.getElementById("descriptionInput").value;
 
-    if(!title || !period || !teacher || !description || !Number.isInteger(+nbHour)){
+    // Ctrl input
+    // Number.isInteger(+nbHour) => le + permet de retirer les ""
+    if(!title || !period || !teacher || !description || !nbHour)
+    {
         alert("Vous n'avez pas remplis tous les champs");
-        return;
+        return; 
     }
+    const hourOnly = nbHour.substring(0, nbHour.length -1);
     const addClass = {
         "id": classes.length+1,
         "label": title,
         "period":period,
-        "nbHour": nbHour,
+        "nbHour": hourOnly,
         "teacher": teacher,
         "detail": description
     };
     classes.push(addClass);
+
     document.getElementById("titleInput").value = "";
     document.getElementById("periodInput").value = "";
     document.getElementById("nbHourInput").value = "";
@@ -100,3 +105,5 @@ function postClass(){
     getClasses();
 
 }
+
+
