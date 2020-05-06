@@ -25,7 +25,7 @@ var classes = [
 ]
 
 //#region Iniatilize page
-function getClasses() {
+function displayClasses() {
      const myTBody = document.getElementById("classTab").getElementsByTagName("tbody")[0];
      classes.forEach(c => {  
         const myRow = myTBody.insertRow(myTBody.rows.length);
@@ -65,13 +65,13 @@ function deleteClass(id){
  if(idClass !== -1){
     classes.splice(idClass, 1);
     deleteAll();
-    getClasses();
+    displayClasses();
  }else{
     alert("Not found");
  }
 }
 
-function postClass(){
+function createClass(){
     const title = document.getElementById("titleInput").value;
     const period = document.getElementById("periodInput").value;
     const nbHour = document.getElementById("nbHourInput").value;
@@ -102,8 +102,7 @@ function postClass(){
     document.getElementById("teacherInput").value = "";
     document.getElementById("descriptionInput").value = "";
     deleteAll();
-    getClasses();
+    displayClasses();
 
 }
-
 
