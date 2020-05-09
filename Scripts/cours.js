@@ -1,4 +1,4 @@
-var classes = [
+const rawTab = [
     {
         "id": 1,
         "label": "Algorithmes",
@@ -23,6 +23,8 @@ var classes = [
         "detail": "Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!"
     }
 ]
+
+var classes  = rawTab;
 
 //#region Iniatilize page
 function displayClasses() {
@@ -56,10 +58,14 @@ function deleteAll(displayOnly = true){
 
     for(let i=size-1; i>1; i--){
         class_tab.deleteRow(i);
-    }
+    } 
+    showButton();
 }
 
 function deleteClass(id){
+    console.log(id);
+    if(classes == 0)
+        classes = rawTab;
  const idClass = classes.findIndex(c => c.id === id);
 
  if(idClass !== -1){
@@ -105,3 +111,18 @@ function clearInput(list){
          document.getElementById(list[i]).value = "";
     }
 }
+
+function showButton(){
+    document.getElementById("initializeBtn").style.display = "initial"; 
+}
+
+function initialize(){
+    document.getElementById("initializeBtn").style.display = "none"; 
+
+    if(classes == 0){
+        // Qd je vide le tableau elmt par elemt je rentre ici
+        // Je comprends pas pourquoi rawTab est vide si c'est une constante
+        classes = rawTab;
+        displayClasses();
+    }   
+} 
