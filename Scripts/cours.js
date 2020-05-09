@@ -3,14 +3,20 @@ const rawTab = [
         "id": 1,
         "label": "Algorithmes",
         "period":"01/01 - 01/03/2020",
-        "nbHour": 35,
+        "nbHour": { 
+            "valeur":35,
+            "unity": "heures"
+            },
         "teacher": "Nom Prénom",
         "detail": "Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!"    },
     {
         "id":2,
         "label": "Conception",
         "period": "01/02 - 29/04/2020",
-        "nbHour": 20,
+        "nbHour": { 
+            "valeur":20,
+            "unity": "heures"
+            },
         "teacher": "Nom Prénom",
         "detail": "Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!"
     },
@@ -18,7 +24,10 @@ const rawTab = [
         "id":3,
         "label": "Base de données",
         "period": "01/02 - 15/03/2020",
-        "nbHour": 40,
+        "nbHour": { 
+            "valeur":40,
+            "unity": "heures"
+            },
         "teacher": "Nom Prénom",
         "detail": "Morem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!"
     }
@@ -40,7 +49,7 @@ function createRow(newClass){
                 +"<th>" + newClass.id +"</th>"
                 +"<td>" + newClass.label +"</td>"
                 +"<td>" + newClass.period +"</td>"
-                +"<td>" + newClass.nbHour +" h"+"</td>"
+                +"<td>" + newClass.nbHour.valeur +" "+ newClass.nbHour.unity+"</td>"
                 +"<td>" + newClass.teacher +"</td>"
                 +"<td>" + newClass.detail +"</td>"
                 +"<td><button type=\"button\" class=\"btn btn-danger text-uppercase text-center\" onClick=\"deleteClass("+newClass.id+")\"> Supprimer </button></td>"
@@ -91,12 +100,15 @@ function createClass(){
         alert("Vous n'avez pas remplis tous les champs");
         return; 
     }
-    const hourOnly = nbHour.substring(0, nbHour.length -1);
+    
     const addClass = {
         "id": classes.length+1,
         "label": title,
         "period":period,
-        "nbHour": hourOnly,
+        "nbHour":{ 
+            "valeur":nbHour,
+            "unity": "heures"
+            },
         "teacher": teacher,
         "detail": description
     };
