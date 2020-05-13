@@ -22,7 +22,7 @@ a[href^="mailto:"] {
     background-color:transparent;
 }
 
-#initializeBtn{
+#reInitBtn{
     display: none;
 }
 

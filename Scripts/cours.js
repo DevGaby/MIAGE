@@ -33,9 +33,24 @@ const rawTab = [
     }
 ]
 
-var classes  = rawTab;
+const profs = [
+    {
+        "lastname": "DUPUIS",
+        "firstname": "Marie"
+    },
+    {
+        "lastname": "MARTINEZ",
+        "firstname": "Luis"
+    },
+    {
+        "lastname": "SPINTBERG",
+        "firstname": "Alexander"
+    }
+]
 
-//#region Iniatilize page
+var classes = rawTab.slice(0, rawTab.length);
+
+//#region initialization page
 function displayClasses() {
      const myTBody = document.getElementById("classTab").getElementsByTagName("tbody")[0];
      classes.forEach(c => {  
@@ -67,20 +82,23 @@ function deleteAll(displayOnly = true){
 
     for(let i=size-1; i>1; i--){
         class_tab.deleteRow(i);
-    } 
-    showButton();
+    }
+    showReInitButton();
 }
 
 function deleteClass(id){
-    console.log(id);
     if(classes == 0)
-        classes = rawTab;
- const idClass = classes.findIndex(c => c.id === id);
+        classes = rawTab.slice(0, rawTab.length);
+    const idClass = classes.findIndex(c => c.id === id);
 
  if(idClass !== -1){
     classes.splice(idClass, 1);
     deleteAll();
+    document.getElementById("reInitBtn").style.display = "none"; 
     displayClasses();
+    if(idClass === 0){
+        showReInitButton();
+    }
  }else{
     alert("Not found");
  }
@@ -95,12 +113,12 @@ function createClass(){
 
     // Ctrl input
     // Number.isInteger(+nbHour) => le + permet de retirer les ""
-    if(!title || !period || !teacher || !description || !nbHour)
+    if(!title || !period || !teacher || !description || !Number.isInteger(+nbHour))
     {
         alert("Vous n'avez pas remplis tous les champs");
         return; 
     }
-    
+
     const addClass = {
         "id": classes.length+1,
         "label": title,
@@ -119,22 +137,20 @@ function createClass(){
 }
 
 function clearInput(list){
-    for(let i= 0; i< list.length-1; i++){
+    for(let i= 0; i< list.length; i++){
          document.getElementById(list[i]).value = "";
     }
 }
 
-function showButton(){
-    document.getElementById("initializeBtn").style.display = "initial"; 
+function showReInitButton(){
+    document.getElementById("reInitBtn").style.display = "initial"; 
 }
 
-function initialize(){
-    document.getElementById("initializeBtn").style.display = "none"; 
+function reInitBtn(){
+    document.getElementById("reInitBtn").style.display = "none"; 
 
     if(classes == 0){
-        // Qd je vide le tableau elmt par elemt je rentre ici
-        // Je comprends pas pourquoi rawTab est vide si c'est une constante
-        classes = rawTab;
+        classes = rawTab.slice(0, rawTab.length);
         displayClasses();
     }   
 } 
