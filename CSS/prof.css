@@ -1,0 +1,31 @@
+footer {
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    font-size: 20px;
+    padding: 15px;
+    background:#EC5E2A;
+}
+
+a[href^="mailto:"] {
+    color: black;
+}
+
+.deleteBtn{
+    background:#f9f9f9;
+    border: none;
+    color: #f9f9f9;
+}
+
+.card-body{
+    background:#EC5E2A;
+}
+
+#reInitBtn{
+    display: none;
+}
+
+.btn-initialize:hover{
+    color: #5cb85c ;
+    background-color : transparent;
+}
