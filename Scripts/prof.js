@@ -61,19 +61,14 @@ var profs = rawProfs.slice(0, rawProfs.length);
 //#region initialization page
 function displayTeachers(){
 let myDiv = document.getElementById("container");
-if(myDiv == null){
+if(myDiv === null){
     let myCardBody = document.getElementById("card-body");
     let newContainer = creatContainer();
     myCardBody.innerHTML = newContainer
     myDiv = document.getElementById("container");
 }
 profs.forEach(p => {
-    if(p.id % 3){
-        console.log(p.id +" : OK");
-        //let myRow = createRow(p.id); 
-    }
     let profCard = createCard(p);
-    //myRow.innerHTML+= profCard;
     myDiv.innerHTML += profCard;
 });
 }
@@ -98,16 +93,9 @@ function createCard(prof){
       +"<p class=\"card-text\">"+ prof.description +"</p>"
     +"</div>";
 }
-
-// Improvement 3card by row
-function createRow(id){
-   return "<div class=\row"+id+">"+"</div>";
-}
-
 //#endregion
 
 function deleteAll(displayOnly = true){
-    console.log("in deleteAll");
     if(!displayOnly){
         profs = [];
     }
@@ -131,7 +119,20 @@ function reInitList(){
 }
 
 function deleteTeacher(id){
-   
+    const  idProf = profs.findIndex(i => i.id === id);
+    console.log(idProf);
+    if(idProf !== -1){
+        profs.splice(idProf, 1);
+        deleteAll();
+        document.getElementById("reInitBtn").style.display = "none"; 
+        document.getElementById("deleteBtn").style.display = "initial";
+        displayTeachers();
+        if(idProf === 0){
+            showReInitButton();
+        }
+    } else {
+        console.log('Not found');
+    }
 }
 
 function addTeacher(){
