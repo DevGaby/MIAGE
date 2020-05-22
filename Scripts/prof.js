@@ -58,6 +58,8 @@ const rawProfs = [
 ]
 var profs = rawProfs.slice(0, rawProfs.length);
 
+
+
 //#region initialization page
 function displayTeachers(){
 let myDiv = document.getElementById("container");
@@ -93,6 +95,28 @@ function createCard(prof){
       +"<p class=\"card-text\">"+ prof.description +"</p>"
     +"</div>";
 }
+
+//Modal
+var modal = document.getElementById("simpleModal");
+var modalBtn = document.getElementById("modalBtn"); //open modal
+var closeModal = document.getElementsByClassName("closeSpan")[0]; //close modal
+ if(modalBtn){
+        modalBtn.addEventListener("click", openModal); //listen for open
+    }
+    
+    if(closeModal){
+        closeModal.addEventListener("click", closeModal); //listen for close
+    }
+
+function openModal(){
+    //document.getElementById("simpleModal").style.display = "initial"; 
+    modal.style.display="block";
+}
+
+function closeModal(){
+    //document.getElementById("simpleModal").style.display = "none"; 
+    modal.style.display="none";
+}
 //#endregion
 
 function deleteAll(displayOnly = true){
@@ -122,11 +146,11 @@ function deleteTeacher(id){
     const  idProf = profs.findIndex(i => i.id === id);
     console.log(idProf);
     if(idProf !== -1){
-        profs.splice(idProf, 1);
-        deleteAll();
-        document.getElementById("reInitBtn").style.display = "none"; 
+        profs.splice(idProf, 1); // delete item
+        deleteAll(); // delete list
+        document.getElementById("reInitBtn").style.display = "none"; // management btn
         document.getElementById("deleteBtn").style.display = "initial";
-        displayTeachers();
+        displayTeachers(); // new list
         if(idProf === 0){
             showReInitButton();
         }
@@ -137,5 +161,43 @@ function deleteTeacher(id){
 
 function addTeacher(){
     console.log("In function add");
+    const nom = document.getElementById("lastname").value;
+    const prenom = document.getElementById("firstname").value;
+    const statut = document.getElementById("state").value;
+    const description = document.getElementById("description").value;
+
+    if(!nom || !prenom || !statut || !description)
+    {
+        alert("Vous n'avez pas remplis tous les champs");
+        return; 
+    }
+
+    const newProf ={
+        "id": profs.length +1,
+        "lastname": nom,
+        "firstname": prenom,
+        "statut": statut,
+        "description":description
+    }
+    profs.push(newProf);
+    //clearInput("lastname","firstname", "state", "description");
+    deleteAll();
+    displayTeachers();
 }
 
+function clearInput(list){
+    for(let i= 0; i< list.length; i++){
+         document.getElementById(list[i]).value = "";
+    }
+}
+
+
+function openModal(){
+    document.getElementById("simpleModal").style.display = "initial"; 
+    //modal.style.display="block";
+}
+
+function closeModal(){
+    document.getElementById("simpleModal").style.display = "none"; 
+    //modal.style.display="none";
+}
