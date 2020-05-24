@@ -59,21 +59,27 @@ const rawProfs = [
 var profs = rawProfs.slice(0, rawProfs.length);
 
 
+function createRow(id) {
+    return "<div id=\"myRow_"+id+"\" class=\"row\"></div>"
+}
 
 //#region initialization page
 function displayTeachers(){
 let myDiv = document.getElementById("container");
-if(myDiv === null){
-    let myCardBody = document.getElementById("card-body");
-    let newContainer = creatContainer();
-    myCardBody.innerHTML = newContainer
-    myDiv = document.getElementById("container");
-}
-profs.forEach(p => {
-    let profCard = createCard(p);
-    myDiv.innerHTML += profCard;
+let myRow = null;
+monId = 0;
+profs.forEach((prof,index) => {
+    if(index % 3 === 0 ) {
+        //on a ajoute dans le container une div avec l'id myRow_0
+        myDiv.innerHTML +=  createRow(monId);
+        myRow = document.getElementById("myRow_"+monId);
+        monId++;
+    }
+    let profCard = createCard(prof);
+    myRow.innerHTML += profCard;
 });
 }
+
 
 function creatContainer(){
     return "<div id=\"container\" class=\"container-fluid d-inline-flex p-2\">" + "</div>";
@@ -96,18 +102,6 @@ function createCard(prof){
     +"</div>";
 }
 
-//Modal
-var modal = document.getElementById("simpleModal");
-var modalBtn = document.getElementById("modalBtn"); //open modal
-var closeModal = document.getElementsByClassName("closeSpan")[0]; //close modal
- if(modalBtn){
-        modalBtn.addEventListener("click", openModal); //listen for open
-    }
-    
-    if(closeModal){
-        closeModal.addEventListener("click", closeModal); //listen for close
-    }
-
 function openModal(){
     //document.getElementById("simpleModal").style.display = "initial"; 
     modal.style.display="block";
@@ -117,6 +111,22 @@ function closeModal(){
     //document.getElementById("simpleModal").style.display = "none"; 
     modal.style.display="none";
 }
+
+function setModalEvents() {
+//Modal
+var modal = document.getElementById("simpleModal");
+var modalBtn = document.getElementById("modalBtn"); //open modal
+var closeModalSpan = document.getElementsByClassName("closeSpan")[0]; //close modal
+ if(modalBtn){
+        modalBtn.addEventListener("click", openModal); //listen for open
+    }
+    
+    if(closeModalSpan){
+        closeModalSpan.addEventListener("click",closeModal); //listen for close
+    }
+}
+
+
 //#endregion
 
 function deleteAll(displayOnly = true){
@@ -124,7 +134,8 @@ function deleteAll(displayOnly = true){
         profs = [];
     }
     const class_container = document.getElementById("container");
-    class_container.parentNode.removeChild(class_container);
+    //class_container.parentNode.removeChild(class_container);
+    class_container.innerHTML = "";
     showReInitButton();
 }
 

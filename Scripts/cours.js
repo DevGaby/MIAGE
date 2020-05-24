@@ -87,21 +87,18 @@ function deleteAll(displayOnly = true){
 }
 
 function deleteClass(id){
-    if(classes == 0)
-        classes = rawTab.slice(0, rawTab.length);
     const idClass = classes.findIndex(c => c.id === id);
 
- if(idClass !== -1){
-    classes.splice(idClass, 1);
-    deleteAll();
-    document.getElementById("reInitBtn").style.display = "none"; 
-    displayClasses();
-    if(idClass === 0){
+    if(idClass !== -1){
+        classes.splice(idClass, 1);
+        deleteAll();
+        document.getElementById("reInitBtn").style.display = "none"; 
+        displayClasses();
         showReInitButton();
+        
+    }else{
+        alert("Not found");
     }
- }else{
-    alert("Not found");
- }
 }
 
 function createClass(){
@@ -148,9 +145,8 @@ function showReInitButton(){
 
 function reInitBtn(){
     document.getElementById("reInitBtn").style.display = "none"; 
-
-    if(classes == 0){
-        classes = rawTab.slice(0, rawTab.length);
-        displayClasses();
-    }   
+    classes = rawTab.slice(0, rawTab.length);
+    deleteAll();
+    displayClasses();
+    
 } 
