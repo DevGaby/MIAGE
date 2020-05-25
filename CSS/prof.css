@@ -1,5 +1,5 @@
 footer {
-    position: fixed;
+    position: relative;
     bottom:0;
     width: 100%;
     font-size: 20px;
@@ -9,6 +9,12 @@ footer {
 
 a[href^="mailto:"] {
     color: black;
+}
+
+.card{
+    width: 300px;
+    height: auto;
+    margin: 20px;
 }
 
 .deleteBtn{
@@ -21,9 +27,7 @@ a[href^="mailto:"] {
     background:#EC5E2A;
 }
 
-#reInitBtn{
-    display: none;
-}
+
 
 .btn-initialize:hover{
     color: #5cb85c ;
@@ -31,7 +35,6 @@ a[href^="mailto:"] {
 }
 
 .modal{
-    /* display: initial; */
     position: fixed;
     z-index: 1;
     left:0;
@@ -60,4 +63,8 @@ a[href^="mailto:"] {
     color:black;
     text-decoration: none;
     cursor: pointer;
+}
+
+#reInitBtn{
+    display: none;
 }
