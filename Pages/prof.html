@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title class="text-uppercase">PROFS</title>
+        <link rel="stylesheet" href="./../CSS/bootstrap.min.css">
+        <link rel="stylesheet" href="./../CSS/prof.css">
+        <script text="text/javascript" src="../Scripts/prof.js"></script>
+    </head>
+    <body>
+        <main>
+            <div class="container-fluid p-0">
+                <div class="navbar navbar-expand-lg navbar-light">
+                    <a class="text-uppercase text-black text-decoration-none" href="accueil.html"> <b> accueil </b> </a>
+                    <div class="collapse navbar-collapse w-75">
+                        <ul class=" header navbar-nav ml-auto ">
+                            <li class="nav-item pl-2"> <a class="nav-link text-black" href="programme.html"> <b class="text-uppercase"> programme </b> </a> </li>
+                            <li class="nav-item  pl-2"> <a class="nav-link text-black" href="cours.html"> <b class="text-uppercase"> cours </b> </a> </li>
+                            <li class="nav-item active pl-2"> <a class="nav-link text-danger" href="prof.html"> <b class="text-uppercase"> profs </b> </a> </li>
+                        </ul>
+                    </div>
+                </div> 
+                <div class="title"> <h2> La liste des profs </h2> </div>
+                <div id="card-body" class="card-body bg-white">
+                    <div id="container" class="container p-2">
+                        <!-- Dynamic display -->
+                    </div>
+                </div> 
+                <div class="bg-white">
+                    <div class="row p-2">
+                        <div class="col-6">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-primary btn-lg btn-block text-uppercase text-center" 
+                                    id="modalBtn">
+                                        ajouter un professeur
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-outline-danger btn-lg btn-block text-uppercase text-center" 
+                                    id="deleteBtn" onClick="deleteAll(false)">
+                                        supprimer tous les profs
+                            </button>
+                            <button type="button" class="btn btn-outline-success btn-lg btn-block text-uppercase text-center" 
+                                    id="reInitBtn" onClick="reInitList()">
+                                        réinitialiser la liste
+                            </button>
+                        </div>
+                    </div> 
+                </div>              
+            </div>
+            <div class="modal" id="simpleModal">
+                <div class="modal-content">
+                    <span class="closeSpan" > &times;</span>
+                    <div> <h3 class="text-uppercase text-center text-secondary p-2"> nouveau prof </h3> </div>
+                    <div class="row">
+                        <div class="col"> <input type="text" name="lastname" id="lastname" placeholder="Nom"> </div>
+                        <div class="col"> <input type="text" name="firstname" id="firstname" placeholder="Prénom"> </div>
+                        <div class="col">  
+                            <label for="state"> Statut :</label>
+                            <select name="state" id="state">
+                                <option value="interne">INTERNE</option>
+                                <option value="externe">EXTERNE</option>
+                            </select> 
+                        </div>
+                    </div>
+                    <div class="row px-3">
+                        <label for="description"> Description :</label>
+                        <textarea class="form-control" id="description" rows="3" cols="25"></textarea>
+                    </div>
+                    <button class="btn btn-success my-2" onClick="addTeacher()"> VALIDER</button>
+                </div>
+            </div> 
+            <footer class="footer d-flex justify-content-center">
+                    <div class="">
+                        <a class="text-black"> ©2020 - HEYGAB | </a>
+                        <a class="text-black text-decoration-none" href="mailto:gabycalixte@gmail.com">
+                            <i> gabycalixte@gmail.com </i> 
+                        </a>
+                    </div>
+            </footer>
+        </main> 
+        <script text="text/javascript">displayTeachers(); setModaladdEventListener();</script>   
+    </body>
+</html
